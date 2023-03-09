@@ -14,12 +14,11 @@ services:
       restart_policy:
         condition: on-failure
   
-  redis:
-    image: redis:7.0.9
-    ports: 
-      - "6379"
+  node:
+    image: node:19-alpiine:3.16
     networks:
       - frontend
+      - backend
     deploy:
       replicas: 4
       placement:
